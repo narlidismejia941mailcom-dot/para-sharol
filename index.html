@@ -1,0 +1,379 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Sharol 💘</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #080d29, #182c59, #753b80, #ff8fbd);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* Corazones flotantes */
+
+.floating {
+    position: fixed;
+    bottom: -50px;
+    animation: subir linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes subir {
+    to {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Libro */
+
+.book {
+    width: 100%;
+    max-width: 600px;
+    min-height: 520px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 25px;
+    box-shadow: 0 0 40px rgba(90,150,255,0.3);
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.page {
+    display: none;
+    animation: aparecer 0.8s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 38px;
+    color: #ffc4e1;
+    margin: 20px 0;
+    text-shadow: 0 0 15px #ff65b5;
+}
+
+h2 {
+    color: #a9d5ff;
+    font-size: 27px;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+.bigheart {
+    font-size: 90px;
+    animation: latido 1.3s infinite;
+    filter: drop-shadow(0 0 15px #ff70bd);
+}
+
+@keyframes latido {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+button {
+    background: linear-gradient(90deg, #ff65b5, #679dff);
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    transition: .3s;
+    box-shadow: 0 0 15px #ff7dc4;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #7db7ff;
+}
+
+textarea {
+    width: 100%;
+    min-height: 130px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid #9bcaff;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    font-size: 16px;
+    resize: vertical;
+    margin-top: 15px;
+}
+
+.small {
+    color: #d8e9ff;
+    font-size: 13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- PORTADA -->
+
+<section class="page active" id="page0">
+
+    <div class="bigheart">💘</div>
+
+    <h1>Para Sharol</h1>
+
+    <p>
+        Hice algo especial para ti.
+        No es un libro cualquiera,
+        son unas pequeñas palabras
+        que quiero que leas con el corazón.
+    </p>
+
+    <p>¿Estás lista para descubrirlo? 💗</p>
+
+    <button onclick="nextPage(1)">
+        Abrir mi libro 💌
+    </button>
+
+</section>
+
+
+<!-- CAPITULO 1 -->
+
+<section class="page" id="page1">
+
+    <h2>Capítulo 1 🌷</h2>
+
+    <h1>Desde que llegaste...</h1>
+
+    <p>
+        Sharol, quiero que sepas que eres
+        una persona muy especial para mí.
+        Desde que llegaste a mi vida,
+        has hecho que muchos momentos
+        sean más bonitos.
+    </p>
+
+    <p>
+        A veces las palabras no alcanzan
+        para explicar lo que alguien significa.
+    </p>
+
+    <div class="bigheart">💘</div>
+
+    <button onclick="nextPage(0)">Anterior</button>
+    <button onclick="nextPage(2)">Siguiente 💗</button>
+
+</section>
+
+
+<!-- CAPITULO 2 -->
+
+<section class="page" id="page2">
+
+    <h2>Capítulo 2 ✨</h2>
+
+    <h1>Mis momentos favoritos</h1>
+
+    <p>
+        Me gustan nuestras conversaciones,
+        nuestras risas y esos pequeños detalles
+        que hacen que un día normal
+        se convierta en algo especial.
+    </p>
+
+    <p>
+        No necesito grandes cosas para ser feliz.
+        Muchas veces basta con compartir
+        un momento contigo.
+    </p>
+
+    <div class="bigheart">💕</div>
+
+    <button onclick="nextPage(1)">Anterior</button>
+    <button onclick="nextPage(3)">Continuar 🌹</button>
+
+</section>
+
+
+<!-- CAPITULO 3 -->
+
+<section class="page" id="page3">
+
+    <h2>Capítulo 3 💙</h2>
+
+    <h1>Lo que deseo contigo</h1>
+
+    <p>
+        Quiero seguir creando recuerdos contigo,
+        apoyarte en tus sueños,
+        escucharte cuando lo necesites
+        y compartir muchos momentos bonitos.
+    </p>
+
+    <p>
+        No prometo que todo sea perfecto,
+        pero sí quiero que siempre exista
+        cariño, respeto y sinceridad.
+    </p>
+
+    <div class="bigheart">💘</div>
+
+    <button onclick="nextPage(2)">Anterior</button>
+    <button onclick="nextPage(4)">Última página 💌</button>
+
+</section>
+
+
+<!-- PREGUNTA FINAL -->
+
+<section class="page" id="page4">
+
+    <div class="bigheart">💘</div>
+
+    <h1>Una pregunta para ti...</h1>
+
+    <h2>Sharol ❤️</h2>
+
+    <p>
+        Después de leer todo esto,
+        quiero preguntarte algo:
+    </p>
+
+    <h2>
+        ¿Qué significa para ti nuestra historia
+        y qué te gustaría que viviéramos juntos?
+    </h2>
+
+    <textarea id="respuesta"
+    placeholder="Escribe aquí lo que sientes... 💗"></textarea>
+
+    <br>
+
+    <button onclick="guardarRespuesta()">
+        Guardar mi respuesta 💌
+    </button>
+
+    <p id="mensaje" class="small"></p>
+
+    <button onclick="nextPage(3)">Volver al capítulo anterior</button>
+
+</section>
+
+</div>
+
+
+<script>
+
+// Cambiar páginas
+
+function nextPage(numero) {
+
+    document.querySelectorAll(".page").forEach(p => {
+        p.classList.remove("active");
+    });
+
+    document.getElementById("page" + numero)
+    .classList.add("active");
+
+    window.scrollTo(0,0);
+}
+
+
+// Crear corazones flotantes
+
+function crearCorazon() {
+
+    const corazon = document.createElement("div");
+
+    corazon.className = "floating";
+
+    const opciones = ["💘", "💕", "💗", "💙", "💞", "✨"];
+
+    corazon.innerHTML =
+    opciones[Math.floor(Math.random() * opciones.length)];
+
+    corazon.style.left = Math.random() * 100 + "vw";
+
+    corazon.style.fontSize =
+    (18 + Math.random() * 30) + "px";
+
+    corazon.style.animationDuration =
+    (5 + Math.random() * 6) + "s";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 11000);
+
+}
+
+setInterval(crearCorazon, 450);
+
+
+// Guardar respuesta en este navegador
+
+function guardarRespuesta() {
+
+    const respuesta =
+    document.getElementById("respuesta").value.trim();
+
+    if (respuesta === "") {
+        alert("Escribe una respuesta antes de guardar 💗");
+        return;
+    }
+
+    localStorage.setItem("respuestaSharol", respuesta);
+
+    document.getElementById("mensaje").innerHTML =
+    "💘 ¡Tu respuesta quedó guardada en este dispositivo!";
+
+    alert("Respuesta guardada ❤️");
+
+}
+
+</script>
+
+</body>
+</html>
+```
